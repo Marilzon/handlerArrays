@@ -50,7 +50,7 @@ const orderByLength = (languages) => {
 
   const filteredResult = [...new Set(result)];
 
-  const ordenedAndFiltered = filteredResult.sort(function (a, b) { return a.length - b.length });
+  const ordenedAndFiltered = filteredResult.sort((a, b) => { return a.length - b.length });
 
   for (let item of ordenedAndFiltered) {
     addElement(`p class='list-item'`, item);
