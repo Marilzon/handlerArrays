@@ -1,4 +1,3 @@
-
 const app = document.querySelector('#app');
 
 function addElement(tag, content) {
@@ -51,7 +50,9 @@ const orderByLength = (languages) => {
 
   const filteredResult = [...new Set(result)];
 
-  for (let item of filteredResult) {
+  const ordenedAndFiltered = filteredResult.sort(function (a, b) { return a.length - b.length });
+
+  for (let item of ordenedAndFiltered) {
     addElement(`p class='list-item'`, item);
   }
 }
