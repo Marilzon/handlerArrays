@@ -1,3 +1,4 @@
+
 const app = document.querySelector('#app');
 
 function addElement(tag, content) {
