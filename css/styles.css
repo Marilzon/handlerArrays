@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,300;0,400;1,300&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+
+  background-color:#e4edf2;
+  height: 100vh;
+}
+
+h1 ,h2 ,h3 ,h4 ,h5 ,h6 {
+  margin: 12px 0;
+}
+
+#app {
+  margin-top: 3%;
+  width: 80vw;
+}
+
+.list-item {
+  margin-left: 8px;
+}
+
+.release-70s {
+  background-color: rgba(101, 253, 177, 0.452);
+  padding: 8px;
+}
+.release-90s {
+  background-color: rgba(101, 172, 253, 0.452);
+  padding: 8px;
+}
+.release-2000 {
+  background-color: rgba(167, 101, 253, 0.452);
+  padding: 8px;
+}
+.release-2010 {
+  background-color: rgba(253, 101, 101, 0.452);
+  padding: 8px;
+}
+
+pre {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 16px;
+
+  background-color: rgb(54, 54, 54);
+  color: rgba(255, 255, 255, 0.822);
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+}

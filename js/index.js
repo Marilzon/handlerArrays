@@ -35,13 +35,13 @@ const languageReleaseDate = [
 
 /*---------------------------------------------------------------*/
 
-function orderBySort() {
+const orderBySort = () => {
   for (let item of languages) {
-    addElement('span class=\'list-let item\'', item);
+    addElement(`p class='list-item'`, item);
   }
 }
 
-function orderByLength(languages) {
+const orderByLength = (languages) => {
   const result = [];
 
   for (let i = 0; i < languages.length; i += 1) {
@@ -51,11 +51,11 @@ function orderByLength(languages) {
   const filteredResult = [...new Set(result)];
 
   for (let item of filteredResult) {
-    addElement('p class=\'list-let item\'', item);
+    addElement(`p class='list-item'`, item);
   }
 }
 
-function startWithP(languages) {
+const startWithP = (languages) => {
   const result = [];
 
   for (let i = 0; i < languages.length; i += 1) {
@@ -65,11 +65,11 @@ function startWithP(languages) {
   }
 
   for (let item of result) {
-    addElement('span class=\'list-let item\'', item);
+    addElement(`p class='list-item'`, item);
   }
 }
 
-function minorOfThree(languages) {
+const minorOfThree = (languages) => {
   const result = [];
 
   for (let i = 0; i < languages.length; i += 1) {
@@ -79,7 +79,7 @@ function minorOfThree(languages) {
   }
 
   for (let item of result) {
-    addElement('span class=\'list-let item\'', item);
+    addElement(`p class='list-item'`, item);
   }
 }
 
@@ -95,40 +95,44 @@ const groupByDecade = (languageReleaseDate) => {
 
   for (let i = 0; i < languageReleaseDate.length; i += 1) {
     if (languageReleaseDate[i].release < 1980) {
-      decade['70s'].push(`Linguagem: ${languageReleaseDate[i].name}, Ano de criação: ${languageReleaseDate[i].release}`);
+      decade['70s'].push(`Linguagem: ${languageReleaseDate[i].name}, Lançamento: ${languageReleaseDate[i].release}`);
     }
     else if (languageReleaseDate[i].release < 2000 && languageReleaseDate[i].release > 1989) {
-      decade['90s'].push(`Linguagem: ${languageReleaseDate[i].name}, Ano de criação: ${languageReleaseDate[i].release}`);
+      decade['90s'].push(`Linguagem: ${languageReleaseDate[i].name}, Lançamento: ${languageReleaseDate[i].release}`);
     }
     else if (languageReleaseDate[i].release < 2010 && languageReleaseDate[i].release > 1999) {
-      decade['2000'].push(`Linguagem: ${languageReleaseDate[i].name}, Ano de criação: ${languageReleaseDate[i].release}`);
+      decade['2000'].push(`Linguagem: ${languageReleaseDate[i].name}, Lançamento: ${languageReleaseDate[i].release}`);
     }
 
     else if (languageReleaseDate[i].release > 2009) {
-      decade['2010'].push(`Linguagem: ${languageReleaseDate[i].name}, Ano de criação: ${languageReleaseDate[i].release}`);
+      decade['2010'].push(`Linguagem: ${languageReleaseDate[i].name}, Lançamento: ${languageReleaseDate[i].release}`);
     }
   }
 
   for (let item of decade['70s']) {
-    addElement(`p class='release-item'`, item);
+    addElement(`p class='release-70s'`, item);
   }
 
   for (let item of decade['90s']) {
-    addElement(`p class='release-item'`, item);
+    addElement(`p class='release-90s'`, item);
   }
 
   for (let item of decade['2000']) {
-    addElement(`p class='release-item'`, item);
+    addElement(`p class='release-2000'`, item);
   }
 
   for (let item of decade['2010']) {
-    addElement(`p class='release-item'`, item);
+    addElement(`p class='release-2010'`, item);
   }
 }
 
 /*---------------------------------------------------------------*/
+
 addElement('h1', 'Dasafio!');
 addElement('h2', 'Manipulando Arrays');
+addElement('div', `<a href="https://github.com/Marilzon/handlerArrays" target="_blank">Repósitório</a>`);
+
+addElement(`pre class='code-formated'`, `[${languages}]`);
 
 addElement('h3', '1) Organize os dados por ordem alfabética.');
 orderBySort();
@@ -142,9 +146,23 @@ startWithP(languages);
 addElement('h3', '4) Recupere todas as linguagens que possuem 3 caracteres ou menos.');
 minorOfThree(languages);
 
-addElement('h3', `5) Crie um novo array, agrupando as linguagens por ano de criação, crie seu novo array com a lingugagem e seu ano de criação,
+addElement('h3', `5) Crie um novo array, agrupando as linguagens por Lançamento, crie seu novo array com a linguagem e seu Lançamento,
 Após isso, agrupe - os de 10 em 10 anos.`);
 groupByDecade(languageReleaseDate);
 
 addElement('h2', 'Códigos utilizados na questões:');
+
+addElement('h2', 'exercicio 1:');
+addElement(`pre class='code-formated'`, orderBySort);
+
+addElement('h2', 'exercicio 2:');
+addElement(`pre class='code-formated'`, orderByLength);
+
+addElement('h2', 'exercicio 3:');
+addElement(`pre class='code-formated'`, startWithP);
+
+addElement('h2', 'exercicio 4:');
+addElement(`pre class='code-formated'`, minorOfThree);
+
+addElement('h2', 'exercicio 5:');
 addElement(`pre class='code-formated'`, groupByDecade);
