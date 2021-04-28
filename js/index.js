@@ -18,7 +18,7 @@ const languages = [
   'C#',
   'Lua',
   'Swift',
-];
+].sort();
 
 const languageReleaseDate = [
   { name: 'PHP', release: 1994 },
@@ -37,7 +37,7 @@ const languageReleaseDate = [
 
 const orderBySort = () => {
   for (let item of languages) {
-    addElement(`p class='list-item'`, item);
+    sortedItems = addElement(`p class='list-item'`, item);
   }
 }
 
